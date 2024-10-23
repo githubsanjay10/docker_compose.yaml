@@ -1,0 +1,24 @@
+version: '3.0'
+services:
+  httpd-service:
+    image: dockerprabha2001/jewellery-httpd
+    ports:
+      - 80:80
+    volumes:
+      - jewellery-vol:/usr/local/apache2/htdocs
+  httpd-service-1:
+    image: dockerprabha2001/cakeshop-httpd
+    ports:
+      - 81:80
+    volumes:
+      - cakeshop-vol:/usr/local/apache2/htdocs
+  httpd-service-2:
+    image: dockerprabha2001/petshop-httpd
+    ports:
+      - 83:80
+    volumes:
+      - petshop-vol:/usr/local/apache2/htdocs
+volumes:
+  jewellery-vol:
+  cakeshop-vol:
+  petshop-vol:             
